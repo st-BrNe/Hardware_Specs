@@ -14,17 +14,17 @@ int main (){
     std::cout<<"Tipo de procesador: " << sysInfo.dwProcessorType <<'\n'; //Para mostrar el tipo de procesador 
     std::cout<<"Número de procesadores: " << sysInfo.dwNumberOfProcessors <<'\n'; // Para mostrar el numero de procesadores
     std::cout<<"Tamaño de la página: " << sysInfo.dwPageSize << '\n'; //Para mostrar el tamaño de la pantalla 
-    std::cout<<"Datos del Fabricante del procesador: "<< system("wmic cput get name, manufacturer"); // Para mostrar los datos del fabricante. 
+    std::cout<<"Datos del Fabricante del procesador: "<< system("wmic cput get name, manufacturer") <<'\n'; // Para mostrar los datos del fabricante. 
 
     // Obtener información sobre la memoria RAM.
 
     MEMORYSTATUSEX memoria;
     memoria.dwLength = sizeof(MEMORYSTATUSEX);
 
-    std::cout<<"Memoria disponible: "<< memoria.ullAvailPhys / (1024 * 1024) << "MB" << '/n';
-    std::cout<<"Memoria física real: "<< memoria.ullTotalPhys / (1024 * 1024) << "MB"<< '/n';
-    std::cout<<"Porcentaje de memoria en uso: "<< memoria.dwMemoryLoad<< "%" << '/n';
-    std::cout<<"El fabricante de las memorias RAM es: " << system("wmic memorychip get manufacturer") << '/n';
+    std::cout<<"Memoria disponible: "<< memoria.ullAvailPhys / (1024 * 1024) << "MB" <<'\n';
+    std::cout<<"Memoria física real: "<< memoria.ullTotalPhys / (1024 * 1024) << "MB"<<'\n';
+    std::cout<<"Porcentaje de memoria en uso: "<< memoria.dwMemoryLoad<< "%" <<'\n';
+    std::cout<<"El fabricante de las memorias RAM es: " << system("wmic memorychip get manufacturer") <<'\n';
 
     // Información sobre la Memoria de video.
     
